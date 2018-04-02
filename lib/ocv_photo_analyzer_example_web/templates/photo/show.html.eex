@@ -1,0 +1,58 @@
+<script>
+  var channel;
+  var file_full_path = '<%= @photo.upload_path %>';
+</script>
+Show Photo
+<table>
+<tr>
+<td valign=top>
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @photo.name %>
+  </li>
+
+  <li>
+    <strong>Upload path:</strong>
+    <%= @photo.upload_path %>
+  </li>
+
+</ul>
+</td>
+</tr>
+<tr VALIGN=top>
+<td valign=middle>
+<img width=400 src='<%= Upload.get_url(@photo.upload_path)%>'>'
+</td>
+<td>
+<div id="1" class="dominant"></div><br>
+<div id="2" class="dominant"></div><br>
+<div id="3" class="dominant"></div><br>
+<div id="4" class="dominant"></div><br>
+<div id="5" class="dominant"></div><br>
+</td>
+<td>
+  <div id="red" class="histogram">
+  </div>
+  <div id="green" class="histogram">
+  </div>
+  <div id="blue" class="histogram">
+  </div>
+
+
+</td>
+</tr>
+</table>
+
+<BR>
+<span><%= link "Edit", to: photo_path(@conn, :edit, @photo) %></span>
+<span><%= link "Back", to: photo_path(@conn, :index) %></span>
+
+<script>
+  $( document ).ready(function() {
+    console.log( "ready!" );
+    return false;
+  });
+
+</script>
